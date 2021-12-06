@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Profile card component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      html,
+      body {
+      }
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+      .container {
+        max-width: 370px;
+        max-height: 850px;
+        border-radius: 10px;
+        justify-content: center;
+        border: 1px solid black;
+      }
+
+      .box-top {
+        height: 150px;
+        width: 370px;
+        background-image: url(images/bg-pattern-card.svg);
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+      }
+      img {
+        border-radius: 50%;
+        margin-top: -50px;
+        border: 5px solid white;
+      }
+      .img-box {
+        display: flex;
+        justify-content: center;
+      }
+
+      .city {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 20px;
+      }
+      .name {
+        display: flex;
+        justify-content: center;
+        padding: 20px 20px 5px 20px;
+        font-size: 18px;
+      }
+      .vic {
+        padding-right: 10px;
+      }
+      .box-bottom {
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+
+        padding: 20px;
+      }
+      .box-stats {
+        display: flex;
+        justify-content: space-evenly;
+      }
+      .stats-id {
+        display: flex;
+        justify-content: space-evenly;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box-top"></div>
+      <div class="img-box">
+        <img src="images/image-victor.jpg" alt="" />
+      </div>
+      <div class="name">
+        <div class="vic">Victor Crest</div>
+        <span> 26</span>
+      </div>
+      <div class="city">London</div>
+
+      <div class="box-bottom">
+        <div class="box-stats">
+          <div>80K</div>
+          <div>803K</div>
+          <div>1.4K</div>
+        </div>
+
+        <div class="stats-id">
+          <div>Followers</div>
+          <div>Likes</div>
+          <div>Photos</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Josef Abdo</a>.
+    </div>
+  </body>
+</html>
