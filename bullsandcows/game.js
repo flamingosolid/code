@@ -34,7 +34,6 @@ function newGame() {
     );
 
     if (guess === null) {
-      newGame();
       return;
     }
     const lowerCaseGuess = guess.toLowerCase();
