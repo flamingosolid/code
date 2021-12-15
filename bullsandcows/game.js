@@ -1,7 +1,8 @@
-const secretWords = [
-  "ananas",
-  "apelsin",
-  "aprikos",
+function startGame() {
+  const secretWords = [
+    "ananas",
+    /*"apelsin",
+    "aprikos",
   "banan",
   "carambola",
   "citron",
@@ -24,14 +25,18 @@ const secretWords = [
   "päron",
   "satsuma",
   "sharon",
-  "äpple",
-];
-function newGame() {
-  const secret = secretWords[Math.floor(Math.random() * secretWords.length)];
+  "äpple",*/
+  ];
+  const form = document.getElementById("addItem");
+  const guessedWords = document.getElementById("list");
+  let secret;
+
+  function newGame() {
+    secret = secretWords[Math.floor(Math.random() * secretWords.length)];
+  }
+
   function makeGuess() {
-    const guess = prompt(
-      "Gissa frukten som är " + secret.length + " bokstäver långt"
-    );
+    const guess = document.getElementById("nameField").value;
 
     if (guess === null) {
       return;
@@ -39,7 +44,7 @@ function newGame() {
     const lowerCaseGuess = guess.toLowerCase();
     if (lowerCaseGuess.length !== secret.length) {
       alert("ordet måste vara " + secret.length + " tecken långt");
-      makeGuess();
+
       return;
     }
 
@@ -58,12 +63,32 @@ function newGame() {
         }
       }
 
-      console.log(bulls);
-      alert(bulls + " exakt antal träffar, " + cows + " finns i ordet");
-      makeGuess();
+      const guessedWord = document.createElement("li");
+      guessedWord.innerText =
+        guess +
+        " - " +
+        bulls +
+        " exakt antal bokstäver på rätt position, " +
+        cows +
+        " bokstäver finns i ordet";
+      guessedWords.appendChild(guessedWord);
     }
   }
 
-  makeGuess();
+  newGame();
+
+  document.getElementById("hidelist").addEventListener("click", function () {
+    if (guessedWords.style.opacity === "0") {
+      guessedWords.style.opacity = "1";
+    } else {
+      guessedWords.style.opacity = "0";
+    }
+  });
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    makeGuess();
+  });
 }
-newGame();
+
+startGame();
