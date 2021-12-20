@@ -1,39 +1,51 @@
 function startGame() {
   const secretWords = [
     "ananas",
-    /*"apelsin",
+    "apelsin",
     "aprikos",
-  "banan",
-  "carambola",
-  "citron",
-  "citrusfrukt",
-  "clementin",
-  "granatäpple",
-  "grapefrukt",
-  "kaktusfikon",
-  "kumquat",
-  "kiwi",
-  "lime",
-  "mandarin",
-  "mango",
-  "melon",
-  "nektarin",
-  "papaya",
-  "passionsfrukt",
-  "persika",
-  "plommon",
-  "päron",
-  "satsuma",
-  "sharon",
-  "äpple",*/
+    "banan",
+    "carambola",
+    "citron",
+    "citrusfrukt",
+    "clementin",
+    "granatäpple",
+    "grapefrukt",
+    "kaktusfikon",
+    "kumquat",
+    "kiwi",
+    "lime",
+    "mandarin",
+    "mango",
+    "melon",
+    "nektarin",
+    "papaya",
+    "passionsfrukt",
+    "persika",
+    "plommon",
+    "päron",
+    "satsuma",
+    "sharon",
+    "äpple",
   ];
   const form = document.getElementById("addItem");
   const guessedWords = document.getElementById("list");
   let secret;
-
+  let maxWrong = 6;
+  let mistakes = 0;
+  function updatemaxWrong() {
+    document.getElementById("maxWrong").innerHTML = maxWrong;
+  }
+  function updateMistakes() {
+    document.getElementById("mistakes").innerHTML = mistakes;
+  }
   function newGame() {
     secret = secretWords[Math.floor(Math.random() * secretWords.length)];
+    guessedWords.innerHTML = "";
+    mistakes = 0;
+    updateMistakes();
   }
+
+  updatemaxWrong();
 
   function makeGuess() {
     const guess = document.getElementById("nameField").value;
@@ -44,7 +56,6 @@ function startGame() {
     const lowerCaseGuess = guess.toLowerCase();
     if (lowerCaseGuess.length !== secret.length) {
       alert("ordet måste vara " + secret.length + " tecken långt");
-
       return;
     }
 
@@ -61,6 +72,14 @@ function startGame() {
         } else if (secret.includes(currentLetter)) {
           cows++;
         }
+      }
+
+      mistakes++;
+      updateMistakes();
+      if (mistakes === maxWrong) {
+        alert("Game Over");
+        newGame();
+        return;
       }
 
       const guessedWord = document.createElement("li");
