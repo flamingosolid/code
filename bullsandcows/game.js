@@ -38,6 +38,7 @@ function startGame() {
   function updateMistakes() {
     document.getElementById("mistakes").innerHTML = mistakes;
   }
+
   function newGame() {
     secret = secretWords[Math.floor(Math.random() * secretWords.length)];
     guessedWords.innerHTML = "";

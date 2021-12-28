@@ -3,9 +3,20 @@
   <head> </head>
   <body>
     <div id="container">
-      <button id="hidelist">visa/dölj</button>
+      <div id="level">
+        <button id="easy">Lätt</button>
+        <button id="medium">Medel</button>
+        <button id="hard">Svårt</button>
+      </div>
+      <span>Du har</span>
+      <span id="countdown"> </span>
+      <span> sekunder på dig!</span>
+      <div></div>
       <div>Fel svar</div>
       <span id="mistakes">0</span> <span>av</span> <span id="maxWrong"></span>
+      <div>
+        <button id="hidelist">visa/dölj</button>
+      </div>
       <ul id="list"></ul>
       <form id="addItem">
         <input id="nameField" type="text" />
