@@ -27,6 +27,38 @@ function startGame() {
     "sharon",
     "äpple",
   ];
+
+  /* const secretWords = [
+    "apple",
+    "watermelon",
+    "orange",
+    "pear",
+    "cherry",
+    "strawberry",
+    "nectarine",
+    "grape",
+    "mango",
+    "blueberry",
+    "pomegranate",
+    "carambola",
+    "plum",
+    "banana",
+    "raspberry",
+    "mandarin",
+    "jackfruit",
+    "papaya",
+    "kiwi",
+    "pineapple",
+    "lime",
+    "lemon",
+    "apricot",
+    "grapefruit",
+    "melon",
+    "coconut",
+    "avocado",
+    "peach",
+  ];*/
+
   const form = document.getElementById("addItem");
   const guessedWords = document.getElementById("list");
   let secret;
@@ -56,12 +88,12 @@ function startGame() {
     }
     const lowerCaseGuess = guess.toLowerCase();
     if (lowerCaseGuess.length !== secret.length) {
-      alert("ordet måste vara " + secret.length + " tecken långt");
+      alert("The word needs to be " + secret.length + " letters long");
       return;
     }
 
     if (lowerCaseGuess === secret) {
-      alert("grattis");
+      alert("GOOD JOB!");
       newGame();
     } else {
       let bulls = 0;
@@ -88,9 +120,9 @@ function startGame() {
         guess +
         " - " +
         bulls +
-        " exakt antal bokstäver på rätt position, " +
+        " letters are on the right position, " +
         cows +
-        " bokstäver finns i ordet";
+        " letters are in the wrong position";
       guessedWords.appendChild(guessedWord);
     }
   }

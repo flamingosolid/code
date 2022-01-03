@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <head> </head>
+  <head>
+    <link rel="stylesheet" href="./style-.css" />
+  </head>
   <body>
-    <div id="container">
-      <div id="level">
-        <button id="easy">Lätt</button>
-        <button id="medium">Medel</button>
-        <button id="hard">Svårt</button>
+    <section>
+      <div class="big-block">
+        <div id="container">
+          <button id="easy">Lätt</button>
+          <button id="medium">Medel</button>
+          <button id="hard">Svårt</button>
+        </div>
+        <span>Du har</span>
+        <span id="countdown"> </span>
+        <span> sekunder på dig!</span>
+        <div></div>
+        <div>Wrong answers</div>
+        <span id="mistakes">0</span> <span>of</span> <span id="maxWrong"></span>
+        <div>
+          <button id="hidelist">Visa / Dölj</button>
+        </div>
+        <ul id="list"></ul>
+        <form id="addItem">
+          <input id="nameField" type="text" />
+          <button>Add</button>
+        </form>
       </div>
-      <span>Du har</span>
-      <span id="countdown"> </span>
-      <span> sekunder på dig!</span>
-      <div></div>
-      <div>Fel svar</div>
-      <span id="mistakes">0</span> <span>av</span> <span id="maxWrong"></span>
-      <div>
-        <button id="hidelist">visa/dölj</button>
-      </div>
-      <ul id="list"></ul>
-      <form id="addItem">
-        <input id="nameField" type="text" />
-        <button>Lägg till</button>
-      </form>
-    </div>
+    </section>
     <script src="game.js"></script>
   </body>
 </html>
