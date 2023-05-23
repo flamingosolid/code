@@ -1,18 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap"
+      rel="stylesheet"
+    />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="question"></div>
-    <button id="true">True</button>
-    <button id="false">False</button>
-
-    <div>Rätt: <span id="correctAnswer"></span></div>
-    <div>Fel: <span id="wrongAnswer"></span></div>
-    <script src="quiz.js"></script>
+    <div class="container">
+      <h1 id="question"></h1>
+      <div class="buttons">
+        <button id="true" class="button-74" role="button">True</button>
+        <button id="false" class="button-74" role="button">False</button>
+      </div>
+      <div class="points">
+        <h2>Rätt: <span id="correctAnswer"></span></h2>
+        <h2>Fel: <span id="wrongAnswer"></span></h2>
+      </div>
+      <script src="quiz.js"></script>
+    </div>
   </body>
 </html>
