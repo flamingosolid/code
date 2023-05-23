@@ -3,6 +3,9 @@ const easy = document.getElementById("easy");
 const medium = document.getElementById("medium");
 const hard = document.getElementById("hard");
 const cancelTimer = document.getElementById("cancel-timer");
+const gameOver = document.getElementById("game-over");
+const game = document.getElementById("game");
+const playAgain = document.getElementById("play-again");
 
 let easyTimer = false;
 let mediumTimer = false;
@@ -10,6 +13,12 @@ let hardTimer = false;
 let activeTimer = null;
 
 function startGame() {
+  game.style.display = "block";
+  gameOver.style.display = "none";
+  easy.classList.remove("activeBtn");
+  medium.classList.remove("activeBtn");
+  hard.classList.remove("activeBtn");
+
   const secretWords = [
     "ananas",
     "apelsin",
@@ -76,6 +85,7 @@ function startGame() {
   let secret;
   let maxWrong = 6;
   let mistakes = 0;
+
   function updatemaxWrong() {
     document.getElementById("maxWrong").innerHTML = maxWrong;
   }
@@ -168,7 +178,8 @@ function startGame() {
 
       if (time === 0) {
         clearInterval(activeTimer);
-        console.log("Game Over");
+        game.style.display = "none";
+        gameOver.style.display = "block";
       }
     }, 1000);
 
@@ -201,3 +212,7 @@ function startGame() {
 }
 
 startGame();
+
+playAgain.addEventListener("click", () => {
+  startGame();
+});

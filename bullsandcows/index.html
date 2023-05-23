@@ -11,28 +11,35 @@
   </head>
   <body>
     <section>
-      <h1>Gissa Frukten!</h1>
-      <div class="big-block">
-        <div id="container-level">
-          <button id="easy">Lätt</button>
-          <button id="medium">Medel</button>
-          <button id="hard">Svårt</button>
+      <div id="game">
+        <h1>Gissa Frukten!</h1>
+        <div class="big-block">
+          <div id="container-level">
+            <button id="easy">Lätt</button>
+            <button id="medium">Medel</button>
+            <button id="hard">Svårt</button>
+          </div>
+          <span>Du har</span>
+          <span id="countdown"> </span>
+          <span> sekunder på dig!</span>
+          <div></div>
+          <div>Wrong answers</div>
+          <span id="mistakes">0</span> <span>of</span>
+          <span id="maxWrong"></span>
+          <div>
+            <button id="hidelist">Visa / Dölj</button>
+          </div>
+          <ul id="list"></ul>
+          <form id="addItem">
+            <input id="nameField" type="text" />
+            <button>Add</button>
+          </form>
+          <button id="cancel-timer">Cancel Timer</button>
         </div>
-        <span>Du har</span>
-        <span id="countdown"> </span>
-        <span> sekunder på dig!</span>
-        <div></div>
-        <div>Wrong answers</div>
-        <span id="mistakes">0</span> <span>of</span> <span id="maxWrong"></span>
-        <div>
-          <button id="hidelist">Visa / Dölj</button>
-        </div>
-        <ul id="list"></ul>
-        <form id="addItem">
-          <input id="nameField" type="text" />
-          <button>Add</button>
-        </form>
-        <button id="cancel-timer">Cancel Timer</button>
+      </div>
+      <div id="game-over">
+        <h1>GAME OVER!</h1>
+        <button id="play-again">Play again</button>
       </div>
     </section>
     <script src="game.js"></script>
