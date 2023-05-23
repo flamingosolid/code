@@ -10,7 +10,7 @@ button {
   cursor: pointer;
 }
 button:hover {
-  background-color: gray;
+  background-color: #00ff41;
 }
 
 ul {
