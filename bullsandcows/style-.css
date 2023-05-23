@@ -1,3 +1,18 @@
+body {
+  font-family: "Press Start 2P", cursive;
+  color: white;
+  background-color: black;
+  line-height: 1.5rem;
+}
+button {
+  font-family: "Press Start 2P", cursive;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+button:hover {
+  background-color: gray;
+}
+
 ul {
   transition: opacity 0.5s ease 0s;
 }
@@ -7,4 +22,40 @@ section {
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  height: 600px;
+}
+
+.big-block {
+  max-width: 500px;
+}
+
+input {
+  height: 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+#container-level {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+#container-level button {
+  border-radius: 5px;
+  border: 0;
+  padding: 0.5rem 1rem;
+}
+
+#container-level button:hover {
+  cursor: pointer;
+}
+
+.activeBtn {
+  background-color: #00ff41;
+}
+
+#cancel-timer {
+  margin-top: 2rem;
 }

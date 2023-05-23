@@ -1,3 +1,14 @@
+const countDown = document.getElementById("countdown");
+const easy = document.getElementById("easy");
+const medium = document.getElementById("medium");
+const hard = document.getElementById("hard");
+const cancelTimer = document.getElementById("cancel-timer");
+
+let easyTimer = false;
+let mediumTimer = false;
+let hardTimer = false;
+let activeTimer = null;
+
 function startGame() {
   const secretWords = [
     "ananas",
@@ -61,6 +72,7 @@ function startGame() {
 
   const form = document.getElementById("addItem");
   const guessedWords = document.getElementById("list");
+
   let secret;
   let maxWrong = 6;
   let mistakes = 0;
@@ -140,6 +152,51 @@ function startGame() {
   form.addEventListener("submit", function (event) {
     event.preventDefault();
     makeGuess();
+  });
+
+  function setTimer(time) {
+    countDown.innerHTML = time;
+
+    if (activeTimer) {
+      clearInterval(activeTimer);
+    }
+
+    activeTimer = setInterval(() => {
+      time--;
+
+      countDown.innerHTML = time;
+
+      if (time === 0) {
+        clearInterval(activeTimer);
+        console.log("Game Over");
+      }
+    }, 1000);
+
+    cancelTimer.addEventListener("click", () => {
+      clearInterval(activeTimer);
+      countDown.innerHTML = 0;
+      easy.classList.remove("activeBtn");
+      medium.classList.remove("activeBtn");
+      hard.classList.remove("activeBtn");
+    });
+  }
+  easy.addEventListener("click", () => {
+    setTimer(120);
+    easy.classList.add("activeBtn");
+    medium.classList.remove("activeBtn");
+    hard.classList.remove("activeBtn");
+  });
+  medium.addEventListener("click", () => {
+    setTimer(90);
+    medium.classList.add("activeBtn");
+    easy.classList.remove("activeBtn");
+    hard.classList.remove("activeBtn");
+  });
+  hard.addEventListener("click", () => {
+    setTimer(60);
+    hard.classList.add("activeBtn");
+    easy.classList.remove("activeBtn");
+    medium.classList.remove("activeBtn");
   });
 }
 
